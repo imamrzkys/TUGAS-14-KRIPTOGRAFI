@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Pastel pink background -->
+  <rect width="64" height="64" fill="#FF85C2" stroke="#1A1A2E" stroke-width="4"/>
+  
+  <!-- Brutalist box container -->
+  <rect x="14" y="14" width="36" height="36" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="4"/>
+  
+  <!-- Lock shackle top -->
+  <path d="M24 22V18C24 13.5 27.5 10 32 10C36.5 10 40 13.5 40 18V22" 
+        stroke="#1A1A2E" stroke-width="3" stroke-linecap="square" fill="none"/>
+        
+  <!-- Lock body (Yellow block) -->
+  <rect x="20" y="24" width="24" height="18" fill="#FDE68A" stroke="#1A1A2E" stroke-width="3"/>
+  
+  <!-- Keyhole detail -->
+  <circle cx="32" cy="31" r="2.5" fill="#1A1A2E"/>
+  <rect x="30.5" y="32" width="3" height="5" fill="#1A1A2E"/>
+</svg>
