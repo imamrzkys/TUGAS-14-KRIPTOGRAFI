@@ -89,10 +89,10 @@ body { background-color: #FFF5FB; color: #1A1A2E; font-family: 'Space Grotesk', 
 @media (min-width: 768px) { .page-container { padding-top: 80px; padding-bottom: 72px; } }
 
 /* === RESPONSIVE GRIDS === */
-/* Step cards: 1col ? 2col ? 3col */
+/* Step cards: 1col -> 2col max */
 .steps-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
-@media (min-width: 640px)  { .steps-grid { grid-template-columns: repeat(2,1fr); gap: 20px; } }
-@media (min-width: 1024px) { .steps-grid { grid-template-columns: repeat(3,1fr); gap: 20px; } }
+@media (min-width: 640px)  { .steps-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; } }
+
 
 /* Features: 1col ? 2col ? 3col */
 .features-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
