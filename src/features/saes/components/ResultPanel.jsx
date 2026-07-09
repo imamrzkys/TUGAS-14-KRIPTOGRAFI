@@ -140,7 +140,7 @@ export default function ResultPanel({ result }) {
         {/* Round Keys */}
         <div style={{ marginBottom: '1.5rem' }}>
           <p style={{ fontWeight: 900, fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#1A1A2E', marginBottom: 12 }}>Round Keys</p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
+          <div className="round-keys-grid">
             {['K0', 'K1', 'K2'].map((k, i) => {
               const key = result.keyData[k];
               return (

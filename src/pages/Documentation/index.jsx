@@ -240,8 +240,8 @@ function AlgoTable({ title, ops, mode }) {
 // ===== Main Docs Page =====
 export default function Docs() {
   return (
-    <div className="page-container px-6 md:px-10" style={{ background: '#FFF5FB', minHeight: '100vh', paddingTop: 90, paddingBottom: 80 }}>
-      <div style={{ maxWidth: 960, margin: '0 auto' }}>
+    <div className="page-container" style={{ background: '#FFF5FB', minHeight: '100vh', padding: '0 clamp(1rem, 4vw, 2.5rem)' }}>
+      <div style={{ maxWidth: 960, margin: '0 auto', paddingTop: '2rem', paddingBottom: '3rem' }}>
 
         {/* Header */}
         <motion.div
@@ -272,7 +272,7 @@ export default function Docs() {
         {/* ===== Alur Operasi ===== */}
         <section style={{ marginBottom: '2.5rem' }}>
           <SectionLabel label="Alur Operasi" />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 24, marginTop: '1.5rem' }}>
+          <div className="docs-grid" style={{ marginTop: '1.5rem' }}>
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <AlgoTable title="Algoritma Enkripsi" ops={ENCRYPT_OPS} mode="enc" />
             </motion.div>
@@ -288,7 +288,7 @@ export default function Docs() {
           <p style={{ fontSize: '0.85rem', fontWeight: 600, color: '#4A4A6A', marginTop: 8, marginBottom: '1.5rem' }}>
             Baris diindeks oleh 2 bit atas nibble; kolom diindeks oleh 2 bit bawah nibble. Arahkan kursor ke sel untuk melihat nilai.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 24 }}>
+          <div className="docs-grid">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <SBoxTable data={SBOX} title="S-Box (Enkripsi)" description="Tabel substitusi non-linier untuk operasi SubNibble pada proses enkripsi." />
             </motion.div>
@@ -304,7 +304,7 @@ export default function Docs() {
           <p style={{ fontSize: '0.85rem', fontWeight: 600, color: '#4A4A6A', marginTop: 8, marginBottom: '1.5rem' }}>
             Perkalian matriks dilakukan atas Galois Field GF(2⁴) menggunakan polinomial irredusibel x⁴ + x + 1.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
+          <div className="docs-grid">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <MatrixBlock matrix={MIX_MATRIX} title="MixColumns" description="Digunakan dalam enkripsi. Setiap kolom dikalikan dengan matriks ini atas GF(2⁴)." note="Nilai: 1 dan 4 = x² dalam GF(2⁴)" />
             </motion.div>
@@ -358,7 +358,7 @@ export default function Docs() {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 24 }}
+            className="features-grid"
           >
             {[
               { label: 'Field', val: 'GF(2⁴) = GF(16)', note: '16 elemen: 0x0 hingga 0xF', bg: '#FFB8D9' },
@@ -389,7 +389,7 @@ export default function Docs() {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}
+            className="docs-grid"
           >
             <div style={{
               background: '#FFFFFF',

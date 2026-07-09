@@ -9,8 +9,8 @@ import GFViz from '../../features/saes/components/GFViz';
 
 /* ── Styles ───────────────────────────────────────────────── */
 const S = {
-  page: { minHeight: '100vh', background: '#FFF5FB', paddingTop: 90, paddingBottom: 80 },
-  wrap: { maxWidth: 960, margin: '0 auto', padding: '0 clamp(1rem, 4vw, 2.5rem)' },
+  page: { minHeight: '100vh', background: '#FFF5FB', paddingTop: 80, paddingBottom: 64 },
+  wrap: { maxWidth: 960, margin: '0 auto', padding: '0 clamp(0.875rem, 4vw, 2.5rem)' },
   label: { fontWeight: 900, fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: '#1A1A2E', marginBottom: 8, display: 'block' },
 };
 
@@ -183,7 +183,7 @@ export default function Simulator() {
           </div>
 
           {/* Input grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.25rem', marginBottom: '1.5rem' }}>
+          <div className="input-grid" style={{ marginBottom: '1.5rem' }}>
             <BinaryInput
               label="Plaintext / Ciphertext — Format Biner (16-bit)"
               value={saes.plaintextBin}
@@ -201,27 +201,27 @@ export default function Simulator() {
           </div>
 
           {/* Action row */}
-          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', paddingTop: '1.25rem', borderTop: '3px dashed #1A1A2E' }}>
+          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', paddingTop: '1.25rem', borderTop: '3px dashed #1A1A2E', alignItems: 'center' }}>
             <button
               onClick={mode === 'encrypt' ? saes.handleEncrypt : saes.handleDecrypt}
               className="btn-brutal"
-              style={{ background: '#FFB347', color: '#1A1A2E', padding: '12px 28px', fontSize: '0.95rem' }}
+              style={{ background: '#FFB347', color: '#1A1A2E', padding: '10px 24px', fontSize: '0.875rem', flexShrink: 0 }}
             >
-              {mode === 'encrypt' ? 'Enkripsi' : 'Dekripsi'} <ArrowRight size={16} />
+              {mode === 'encrypt' ? 'Enkripsi' : 'Dekripsi'} <ArrowRight size={15} />
             </button>
             <button
               onClick={saes.reset}
               className="btn-brutal"
-              style={{ background: '#FFFFFF', color: '#1A1A2E', padding: '12px 20px', fontSize: '0.85rem' }}
+              style={{ background: '#FFFFFF', color: '#1A1A2E', padding: '10px 18px', fontSize: '0.8rem', flexShrink: 0 }}
             >
               <RotateCcw size={14} /> Reset
             </button>
             <button
               onClick={saes.loadTestVector}
               className="btn-brutal"
-              style={{ background: '#C084FC', color: '#1A1A2E', padding: '12px 20px', fontSize: '0.85rem' }}
+              style={{ background: '#C084FC', color: '#1A1A2E', padding: '10px 18px', fontSize: '0.8rem', flexShrink: 0 }}
             >
-              Muat Test Vector
+              Test Vector
             </button>
           </div>
         </motion.div>
@@ -326,7 +326,7 @@ export default function Simulator() {
                 </div>
 
                 {/* Step Cards Grid */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 20 }}>
+                <div className="steps-grid">
                   {saes.result.steps.map((step, i) => (
                     <div id={`step-${step.id}`} key={step.id}>
                       <StepCard

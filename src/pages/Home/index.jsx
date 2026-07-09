@@ -39,10 +39,10 @@ export default function Home() {
       <section style={{
         background: '#FDE68A',
         borderBottom: '4px solid #1A1A2E',
-        paddingTop: 'calc(4rem + 80px)',
-        paddingBottom: '4rem',
-        paddingLeft: 'clamp(1.5rem, 5vw, 5rem)',
-        paddingRight: 'clamp(1.5rem, 5vw, 5rem)',
+        paddingTop: 'calc(3rem + 72px)',
+        paddingBottom: '3rem',
+        paddingLeft: 'clamp(1rem, 5vw, 5rem)',
+        paddingRight: 'clamp(1rem, 5vw, 5rem)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           {/* Badge */}
@@ -161,16 +161,9 @@ export default function Home() {
       <section style={{
         background: '#5ECFB1',
         borderBottom: '4px solid #1A1A2E',
-        borderTop: '0px',
-        padding: '2rem clamp(1.5rem, 5vw, 5rem)',
+        padding: '2rem clamp(1rem, 5vw, 5rem)',
       }}>
-        <div style={{
-          maxWidth: 1200,
-          margin: '0 auto',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-          gap: 24,
-        }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }} className="stats-grid">
           {STATS.map(({ value, label }, i) => (
             <motion.div
               key={i}
@@ -193,28 +186,24 @@ export default function Home() {
       <section style={{
         background: '#FFF5FB',
         borderBottom: '4px solid #1A1A2E',
-        padding: '5rem clamp(1.5rem, 5vw, 5rem)',
+        padding: '4rem clamp(1rem, 5vw, 5rem)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            style={{ marginBottom: '3rem' }}
+            style={{ marginBottom: '2.5rem' }}
           >
             <p style={{ fontWeight: 900, fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.15em', color: '#4A4A6A', marginBottom: 8 }}>
               Fitur Platform
             </p>
-            <h2 style={{ fontWeight: 900, fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: '#1A1A2E', textTransform: 'uppercase', lineHeight: 1.1 }}>
+            <h2 style={{ fontWeight: 900, fontSize: 'clamp(1.75rem, 5vw, 3.5rem)', color: '#1A1A2E', textTransform: 'uppercase', lineHeight: 1.1 }}>
               Semua yang kamu butuhkan
             </h2>
           </motion.div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-            gap: 24,
-          }}>
+          <div className="features-grid">
             {FEATURES.map(({ title, desc, label, bg }, i) => (
               <motion.div
                 key={i}
@@ -255,7 +244,7 @@ export default function Home() {
             </h2>
           </motion.div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 20 }}>
+          <div className="algo-grid">
             {ALGORITHM_STEPS.map(({ round, ops, bg, num }, i) => (
               <motion.div
                 key={i}
@@ -297,7 +286,7 @@ export default function Home() {
             <p style={{ fontWeight: 900, fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: '#4A4A6A', marginBottom: 16 }}>
               State Matrix 2×2
             </p>
-            <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'center' }}>
+            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', justifyContent: 'flex-start' }}>
               {[
                 { label: 'n₀', sublabel: 'bit [15:12]', bg: '#FFB8D9' },
                 { label: 'n₂', sublabel: 'bit [7:4]',   bg: '#B8F0E0' },
