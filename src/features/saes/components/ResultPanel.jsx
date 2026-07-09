@@ -62,9 +62,9 @@ export default function ResultPanel({ result }) {
         </span>
       </div>
 
-      <div style={{ padding: '1.5rem 1.5rem 0' }}>
+      <div style={{ padding: '1.5rem' }}>
         {/* IO grid */}
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-8 items-center mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-8 items-center" style={{ marginBottom: '2.5rem' }}>
           {/* Input */}
           <div>
             <p style={{ fontWeight: 900, fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#1A1A2E', marginBottom: 8 }}>
@@ -125,7 +125,7 @@ export default function ResultPanel({ result }) {
         </div>
 
         {/* Ciphertext big display */}
-        <div style={{ background: '#FDE68A', border: '4px solid #1A1A2E', padding: '1rem 1.25rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}>
+        <div style={{ background: '#FDE68A', border: '4px solid #1A1A2E', padding: '1rem 1.25rem', marginBottom: '2.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}>
           <span style={{ fontWeight: 900, fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#1A1A2E' }}>
             {isEncrypt ? 'Output' : 'Recovered'}
           </span>
@@ -138,7 +138,7 @@ export default function ResultPanel({ result }) {
         </div>
 
         {/* Round Keys */}
-        <div style={{ marginBottom: '1.5rem' }}>
+        <div style={{ marginBottom: 0 }}>
           <p style={{ fontWeight: 900, fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#1A1A2E', marginBottom: 12 }}>Round Keys</p>
           <div className="round-keys-grid">
             {['K0', 'K1', 'K2'].map((k, i) => {

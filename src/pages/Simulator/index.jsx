@@ -148,7 +148,7 @@ export default function Simulator() {
             border: '4px solid #1A1A2E',
             boxShadow: '6px 6px 0px #1A1A2E',
             padding: '1.75rem',
-            marginBottom: '1.5rem',
+            marginBottom: '2.5rem',
           }}
         >
           {/* Mode toggle */}
@@ -235,7 +235,7 @@ export default function Simulator() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -16 }}
               transition={{ duration: 0.4 }}
-              style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}
+              style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}
             >
               {/* Result panel */}
               <ResultPanel result={saes.result} />
